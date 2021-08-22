@@ -195,6 +195,7 @@ Citizen.CreateThread(function()
                             disableCombat = true,
                         }, {}, {}, {}, function() -- Done
                             TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+			    ResetPedMovementClipset(PlayerPedId()) -- This Fixes the Animation when you get out of bed making you not using the injured walking style
                             local bedId = GetAvailableBed()
                             if bedId ~= nil then 
                                 TriggerServerEvent("hospital:server:SendToBed", bedId, true)
